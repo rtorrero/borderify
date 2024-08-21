@@ -1,18 +1,19 @@
 {
   "manifest_version": 2,
-  "name": "Borderify",
+  "name": "Beastify",
   "version": "1.0",
 
-  "description": "Agrega un borde rojo a todas las páginas web de mozilla.org.",
-
+  "description": "Shares a bandcamp album on mastodon",
+  "homepage_url": "https://github.com/rtorrero/borderify",
   "icons": {
     "48": "icons/border-48.png"
   },
 
-  "content_scripts": [
-    {
-      "matches": ["*://*.mozilla.org/*"],
-      "js": ["borderify.js"]
-    }
-  ]
+  "permissions": ["activeTab"],
+
+  "browser_action": {
+    "default_icon": "icons/border-48.png",
+    "default_title": "Compartir enlace",
+    "default_popup": "popup/share_link.html"
+  }
 }
